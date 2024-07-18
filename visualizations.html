@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart Visualizations</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="visualizations.html">Visualizations</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Chart Visualizations</h1>
+            <div class="controls">
+                <input type="text" id="arrayInput" placeholder="Enter array values (comma-separated)">
+                <select id="algorithmSelect">
+                    <option value="bubbleSort">Bubble Sort</option>
+                    <option value="selectionSort">Selection Sort</option>
+                    <option value="insertionSort">Insertion Sort</option>
+                    <option value="radixSort">Radix Sort</option>
+                    <option value="bucketSort">Bucket Sort</option>
+                    <option value="shellSort">Shell Sort</option>
+                    <option value="combSort">Comb Sort</option>
+                    <option value="pigeonholeSort">Pigeonhole Sort</option>
+                    <option value="cycleSort">Cycle Sort</option>
+                </select>
+                <select id="chartTypeSelect">
+                    <option value="bar">Bar Chart</option>
+                    <option value="pie">Pie Chart</option>
+                    <option value="line">Line Chart</option>
+                </select>
+                <button id="startButton">Start</button>
+            </div>
+            <div class="speedControl">
+                <label for="speedRange">Speed:</label>
+                <input type="range" id="speedRange" min="50" max="1000" value="300">
+                <span id="speedValue">300ms</span>
+            </div>
+            <canvas id="visualizationCanvas"></canvas>
+            <div class="counter">
+                <p>Iterations: <span id="iterationCounter">0</span></p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 CAID</p>
+    </footer>
+    <script src="visualizations.js"></script>
+</body>
+</html>

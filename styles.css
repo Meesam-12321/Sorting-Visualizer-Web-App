@@ -1,0 +1,458 @@
+/* styles.css */
+
+/* General styling */
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(to right, #2c3e50, #3498db);
+    overflow: auto;
+}
+
+.container {
+    text-align: center;
+    width: 80%;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: #ecf0f1;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+h1 {
+    color: #34495e;
+    margin-bottom: 20px;
+}
+
+.controls, .speedControl {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 800px;
+}
+
+#arrayInput, #algorithmSelect, #startButton {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #bdc3c7;
+}
+
+#arrayInput {
+    width: 50%;
+    flex: 2;
+}
+
+#algorithmSelect {
+    flex: 1;
+    background-color: #ecf0f1;
+}
+
+#startButton {
+    flex: 1;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#startButton:hover {
+    background-color: #2980b9;
+}
+
+#visualizationContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    background-color: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    margin: 0 5px;
+    background-color: #3498db;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.cell.highlight {
+    background-color: #e74c3c;
+}
+
+.cell.swapping {
+    background-color: #f1c40f;
+}
+
+.arrow {
+    position: absolute;
+    bottom: 70px;
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid #e74c3c;
+    transition: left 0.3s ease;
+}
+
+.speedControl {
+    align-items: center;
+}
+
+#speedRange {
+    width: 200px;
+}
+
+.counter {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #34495e;
+}
+
+/* Header and Navigation styling */
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: none;
+    padding: 20px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+}
+
+nav ul li {
+    font-weight: bold;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    transition: border-bottom 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    border-bottom: 2px solid white;
+}
+
+/* Footer styling */
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    background: none;
+    color: white;
+    font-size: 14px;
+}
+
+/* Chat styling */
+.chat-container {
+    width: 80%;
+    max-width: 400px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+#chatbox {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#chat-log {
+    width: 100%;
+    height: 200px;
+    overflow-y: scroll;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+}
+
+.chat-message {
+    margin: 5px 0;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.user-message {
+    background-color: #3498db;
+    color: white;
+    align-self: flex-end;
+}
+
+.bot-message {
+    background-color: #ecf0f1;
+    color: black;
+    align-self: flex-start;
+}
+
+#chat-input {
+    width: calc(100% - 80px);
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#send-button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#send-button:hover {
+    background-color: #2980b9;
+}
+
+/* Chat Icon */
+#chat-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #3498db;
+    color: white;
+    font-size: 30px;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chat-container.hidden {
+    display: none;
+}
+
+.chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    max-width: 90%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+#chatbox {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#chat-log {
+    width: 100%;
+    height: 200px;
+    overflow-y: scroll;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+}
+
+.chat-message {
+    margin: 5px 0;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.user-message {
+    background-color: #3498db;
+    color: white;
+    align-self: flex-end;
+}
+
+.bot-message {
+    background-color: #ecf0f1;
+    color: black;
+    align-self: flex-start;
+}
+
+#chat-input {
+    width: calc(100% - 80px);
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#send-button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#send-button:hover {
+    background-color: #2980b9;
+}
+/* styles.css */
+
+/* General styling */
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(to right, #2c3e50, #3498db);
+    overflow: auto;
+}
+
+.container {
+    text-align: center;
+    width: 80%;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: #ecf0f1;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+h1 {
+    color: #34495e;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+pre {
+    text-align: left;
+    width: 100%;
+    max-width: 800px;
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 10px;
+    overflow: auto;
+    margin-top: 20px;
+}
+
+#visualizationContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    background-color: #3498db;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+/* Header and Navigation styling */
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: none;
+    padding: 20px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+}
+
+nav ul li {
+    font-weight: bold;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    transition: border-bottom 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    border-bottom: 2px solid white;
+}
+
+/* Footer styling */
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    background: none;
+    color: white;
+    font-size: 14px;
+}

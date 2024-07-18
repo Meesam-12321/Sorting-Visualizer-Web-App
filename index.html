@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Algorithm Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="visualizations.html">Visualizations</a></li>
+                <li><a href="code_execution.html">Code Execution</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Sorting Algorithm Visualizer</h1>
+            <div class="controls">
+                <input type="text" id="arrayInput" placeholder="Enter array values (comma-separated)">
+                <select id="algorithmSelect">
+                    <option value="bubbleSort">Bubble Sort</option>
+                    <option value="selectionSort">Selection Sort</option>
+                    <option value="insertionSort">Insertion Sort</option>
+                    <option value="heapSort">Heap Sort</option>
+                    <option value="radixSort">Radix Sort</option>
+                    <option value="countingSort">Counting Sort</option>
+                    <option value="bucketSort">Bucket Sort</option>
+                    <option value="shellSort">Shell Sort</option>
+                    <option value="cocktailSort">Cocktail Sort</option>
+                    <option value="combSort">Comb Sort</option>
+                </select>
+                <button id="startButton">Start</button>
+            </div>
+            <div class="speedControl">
+                <label for="speedRange">Speed:</label>
+                <input type="range" id="speedRange" min="50" max="1000" value="300">
+                <span id="speedValue">300ms</span>
+            </div>
+            <div id="visualizationContainer"></div>
+            <div class="counter">
+                <p>Iterations: <span id="iterationCounter">0</span></p>
+            </div>
+        </div>
+        <div id="chat-icon" onclick="toggleChat()">
+            💬
+        </div>
+        <div class="chat-container hidden" id="chat-container">
+            <div id="chatbox">
+                <div id="chat-log"></div>
+                <input type="text" id="chat-input" placeholder="Ask me about sorting algorithms...">
+                <button id="send-button">Send</button>
+            </div>
+        </div>
+        <audio id="iterationSound" src="sound.mp3"></audio>
+    </main>
+    <footer>
+        <p>&copy; 2024 CAID</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>

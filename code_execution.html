@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Execution and Visualization</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="visualizations.html">Visualizations</a></li>
+                <li><a href="code_execution.html">Code Execution</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Code Execution and Visualization</h1>
+            <div id="editor" style="height: 300px; width: 100%; border: 1px solid #ccc;"></div>
+            <button id="executeButton">Run Code</button>
+            <pre id="output"></pre>
+            <div id="visualizationContainer"></div>
+            <canvas id="chartContainer" width="400" height="200"></canvas>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 CAID</p>
+    </footer>
+    <script src="code_execution.js"></script>
+</body>
+</html>
